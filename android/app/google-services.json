@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "278276856991",
+    "project_id": "rjc-codelab-6",
+    "storage_bucket": "rjc-codelab-6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278276856991:android:e6d1189aa7f39f153756aa",
+        "android_client_info": {
+          "package_name": "com.saifymatteo.rjc_codelab_6.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278276856991-v4ovk6a6cbfu1ms45vt5vg2t6bsr61mo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZY2S-q5VjfQHN-2Pq_j8QQKU08ow4PJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278276856991-v4ovk6a6cbfu1ms45vt5vg2t6bsr61mo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
