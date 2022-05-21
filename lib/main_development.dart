@@ -5,9 +5,17 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:rjc_codelab_6/app/app.dart';
 import 'package:rjc_codelab_6/bootstrap.dart';
+import 'package:rjc_codelab_6/firebase_options.dart';
 
-void main() {
-  bootstrap(() => const App());
+void main() async {
+  await dotenv.load();
+  // TODO(saifymatteo): change package name
+  // in android\app\google-services.json
+  // remove .dev
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await bootstrap(() => const App());
 }
