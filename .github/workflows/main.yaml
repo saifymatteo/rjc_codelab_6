@@ -22,6 +22,9 @@ jobs:
   #       echo FIREBASE_API_KEY_IOS=${{ secrets.FIREBASE_API_KEY_IOS }} >> .env
   #       echo FIREBASE_API_ID_IOS=${{ secrets.FIREBASE_API_ID_IOS }} >> .env
   #       cat .env
+  get-env:
+    - name: Create .env file
+      uses: falti/dotenv-action@v0.2.8
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
