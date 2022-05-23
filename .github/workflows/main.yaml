@@ -27,14 +27,17 @@ jobs:
   #     - name: Create .env file
   #       uses: falti/dotenv-action@v0.2.8
   create-env:
-    uses: SpicyPizza/create-envfile@v1.3.0
-    with:
-      envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_WEB }}
-      envkey_SECRET_KEY: ${{ secrets.FIREBASE_APP_ID_WEB }}
-      envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_ANDROID }}
-      envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_ID_ANDROID }}
-      envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_IOS }}
-      envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_ID_IOS }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Make env file
+      uses: SpicyPizza/create-envfile@v1.3.0
+      with:
+        envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_WEB }}
+        envkey_SECRET_KEY: ${{ secrets.FIREBASE_APP_ID_WEB }}
+        envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_ANDROID }}
+        envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_ID_ANDROID }}
+        envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_IOS }}
+        envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_ID_IOS }}
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
