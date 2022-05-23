@@ -2,13 +2,13 @@ name: rjc_codelab_6
 
 on: [pull_request, push]
 
-env:
-  FIREBASE_API_KEY_WEB: ${{ secrets.FIREBASE_API_KEY_WEB }}
-  FIREBASE_APP_ID_WEB: ${{ secrets.FIREBASE_APP_ID_WEB }}
-  FIREBASE_API_KEY_ANDROID: ${{ secrets.FIREBASE_API_KEY_ANDROID }}
-  FIREBASE_API_ID_ANDROID: ${{ secrets.FIREBASE_API_ID_ANDROID }}
-  FIREBASE_API_KEY_IOS: ${{ secrets.FIREBASE_API_KEY_IOS }}
-  FIREBASE_API_ID_IOS: ${{ secrets.FIREBASE_API_ID_IOS }}  
+# env:
+#   FIREBASE_API_KEY_WEB: ${{ secrets.FIREBASE_API_KEY_WEB }}
+#   FIREBASE_APP_ID_WEB: ${{ secrets.FIREBASE_APP_ID_WEB }}
+#   FIREBASE_API_KEY_ANDROID: ${{ secrets.FIREBASE_API_KEY_ANDROID }}
+#   FIREBASE_API_ID_ANDROID: ${{ secrets.FIREBASE_API_ID_ANDROID }}
+#   FIREBASE_API_KEY_IOS: ${{ secrets.FIREBASE_API_KEY_IOS }}
+#   FIREBASE_API_ID_IOS: ${{ secrets.FIREBASE_API_ID_IOS }}  
 
 jobs:
   # steps:
@@ -26,18 +26,21 @@ jobs:
   #   steps:
   #     - name: Create .env file
   #       uses: falti/dotenv-action@v0.2.8
-  # create-env:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: Make env file
-  #     uses: SpicyPizza/create-envfile@v1.3.0
-  #     with:
-  #       envkey_FIREBASE_API_KEY_WEB: ${{ secrets.FIREBASE_API_KEY_WEB }}
-  #       envkey_FIREBASE_APP_ID_WEB: ${{ secrets.FIREBASE_APP_ID_WEB }}
-  #       envkey_FIREBASE_API_KEY_ANDROID: ${{ secrets.FIREBASE_API_KEY_ANDROID }}
-  #       envkey_FIREBASE_API_ID_ANDROID: ${{ secrets.FIREBASE_API_ID_ANDROID }}
-  #       envkey_FIREBASE_API_KEY_IOS: ${{ secrets.FIREBASE_API_KEY_IOS }}
-  #       envkey_FIREBASE_API_ID_IOS: ${{ secrets.FIREBASE_API_ID_IOS }}
+  create-env:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Make env file
+      uses: SpicyPizza/create-envfile@v1.3.0
+      with:
+        envkey_FIREBASE_API_KEY_WEB: ${{ secrets.FIREBASE_API_KEY_WEB }}
+        envkey_FIREBASE_APP_ID_WEB: ${{ secrets.FIREBASE_APP_ID_WEB }}
+        envkey_FIREBASE_API_KEY_ANDROID: ${{ secrets.FIREBASE_API_KEY_ANDROID }}
+        envkey_FIREBASE_API_ID_ANDROID: ${{ secrets.FIREBASE_API_ID_ANDROID }}
+        envkey_FIREBASE_API_KEY_IOS: ${{ secrets.FIREBASE_API_KEY_IOS }}
+        envkey_FIREBASE_API_ID_IOS: ${{ secrets.FIREBASE_API_ID_IOS }}
+        directory: './'
+        file_name: '.env'
+        fail_on_empty: true
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
