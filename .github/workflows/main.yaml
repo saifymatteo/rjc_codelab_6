@@ -26,7 +26,7 @@ jobs:
   #   steps:
   #     - name: Create .env file
   #       uses: falti/dotenv-action@v0.2.8
-  create-env:
+  create_env:
     name: Please Dont Crash
     steps:
     - uses: SpicyPizza/create-envfile@v1.3.0
