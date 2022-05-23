@@ -13,7 +13,7 @@ import 'package:rjc_codelab_6/firebase_options.dart';
 
 void main() async {
   await dotenv.load();
-  // TODO(saifymatteo): change package name
+  // Change package name
   // in android\app\google-services.json
   // remove .dev
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);

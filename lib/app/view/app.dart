@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rjc_codelab_6/counter/counter.dart';
+import 'package:rjc_codelab_6/app/view/splash.dart';
 import 'package:rjc_codelab_6/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -27,7 +27,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const GDGCommunitySplash(),
     );
   }
 }
