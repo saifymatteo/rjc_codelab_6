@@ -29,7 +29,7 @@ jobs:
   create-env:
     runs-on: ubuntu-latest
     steps:
-      uses: SpicyPizza/create-envfile@v1.3.0
+    - uses: SpicyPizza/create-envfile@v1.3.0
       with:
         envkey_FIREBASE_API_KEY_WEB: ${{ secrets.FIREBASE_API_KEY_WEB }}
         envkey_FIREBASE_APP_ID_WEB: ${{ secrets.FIREBASE_APP_ID_WEB }}
@@ -40,7 +40,7 @@ jobs:
         directory: './'
         file_name: '.env'
         fail_on_empty: true
-      uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    - uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
       with:
         flutter_channel: stable
         flutter_version: 3.0.0
