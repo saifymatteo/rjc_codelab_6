@@ -26,7 +26,7 @@ jobs:
   #   steps:
   #     - name: Create .env file
   #       uses: falti/dotenv-action@v0.2.8
-  build:
+  create-env:
     uses: SpicyPizza/create-envfile@v1.3.0
     with:
       envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_WEB }}
@@ -35,6 +35,7 @@ jobs:
       envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_ID_ANDROID }}
       envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_KEY_IOS }}
       envkey_SECRET_KEY: ${{ secrets.FIREBASE_API_ID_IOS }}
+  build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
       flutter_channel: stable
