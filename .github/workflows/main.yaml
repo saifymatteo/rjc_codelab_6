@@ -41,9 +41,13 @@ jobs:
         directory: './'
         file_name: '.env'
         fail_on_empty: true
-  build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      flutter_channel: stable
-      flutter_version: 3.0.0
+      uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+      with:
+        flutter_channel: stable
+        flutter_version: 3.0.0
+  # build:
+  #   uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+  #   with:
+  #     flutter_channel: stable
+  #     flutter_version: 3.0.0
     
