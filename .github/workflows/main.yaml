@@ -2,18 +2,26 @@ name: rjc_codelab_6
 
 on: [pull_request, push]
 
+env:
+  FIREBASE_API_KEY_WEB=${{ secrets.FIREBASE_API_KEY_WEB }}
+  FIREBASE_APP_ID_WEB=${{ secrets.FIREBASE_APP_ID_WEB }}
+  FIREBASE_API_KEY_ANDROID=${{ secrets.FIREBASE_API_KEY_ANDROID }}
+  FIREBASE_API_ID_ANDROID=${{ secrets.FIREBASE_API_ID_ANDROID }}
+  FIREBASE_API_KEY_IOS=${{ secrets.FIREBASE_API_KEY_IOS }}
+  FIREBASE_API_ID_IOS=${{ secrets.FIREBASE_API_ID_IOS }}  
+
 jobs:
-  steps:
-    - name: Create .env file
-      run: |
-        touch .env
-        echo FIREBASE_API_KEY_WEB=${{ secrets.FIREBASE_API_KEY_WEB }} >> .env
-        echo FIREBASE_APP_ID_WEB=${{ secrets.FIREBASE_APP_ID_WEB }} >> .env
-        echo FIREBASE_API_KEY_ANDROID=${{ secrets.FIREBASE_API_KEY_ANDROID }} >> .env
-        echo FIREBASE_API_ID_ANDROID=${{ secrets.FIREBASE_API_ID_ANDROID }} >> .env
-        echo FIREBASE_API_KEY_IOS=${{ secrets.FIREBASE_API_KEY_IOS }} >> .env
-        echo FIREBASE_API_ID_IOS=${{ secrets.FIREBASE_API_ID_IOS }} >> .env
-        cat .env
+  # steps:
+  #   - name: Create .env file
+  #     run: |
+  #       touch .env
+  #       echo FIREBASE_API_KEY_WEB=${{ secrets.FIREBASE_API_KEY_WEB }} >> .env
+  #       echo FIREBASE_APP_ID_WEB=${{ secrets.FIREBASE_APP_ID_WEB }} >> .env
+  #       echo FIREBASE_API_KEY_ANDROID=${{ secrets.FIREBASE_API_KEY_ANDROID }} >> .env
+  #       echo FIREBASE_API_ID_ANDROID=${{ secrets.FIREBASE_API_ID_ANDROID }} >> .env
+  #       echo FIREBASE_API_KEY_IOS=${{ secrets.FIREBASE_API_KEY_IOS }} >> .env
+  #       echo FIREBASE_API_ID_IOS=${{ secrets.FIREBASE_API_ID_IOS }} >> .env
+  #       cat .env
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
