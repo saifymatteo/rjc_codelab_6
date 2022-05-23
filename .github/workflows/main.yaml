@@ -8,12 +8,13 @@ jobs:
     with:
       flutter_channel: stable
       flutter_version: 3.0.0
-    run: |
-      touch .env
-      echo FIREBASE_API_KEY_WEB=${{ secrets.FIREBASE_API_KEY_WEB }} >> .env
-      echo FIREBASE_APP_ID_WEB=${{ secrets.FIREBASE_APP_ID_WEB }} >> .env
-      echo FIREBASE_API_KEY_ANDROID=${{ secrets.FIREBASE_API_KEY_ANDROID }} >> .env
-      echo FIREBASE_API_ID_ANDROID=${{ secrets.FIREBASE_API_ID_ANDROID }} >> .env
-      echo FIREBASE_API_KEY_IOS=${{ secrets.FIREBASE_API_KEY_IOS }} >> .env
-      echo FIREBASE_API_ID_IOS=${{ secrets.FIREBASE_API_ID_IOS }} >> .env
-      cat .env
+    steps:
+      run: |
+        touch .env
+        echo FIREBASE_API_KEY_WEB=${{ secrets.FIREBASE_API_KEY_WEB }} >> .env
+        echo FIREBASE_APP_ID_WEB=${{ secrets.FIREBASE_APP_ID_WEB }} >> .env
+        echo FIREBASE_API_KEY_ANDROID=${{ secrets.FIREBASE_API_KEY_ANDROID }} >> .env
+        echo FIREBASE_API_ID_ANDROID=${{ secrets.FIREBASE_API_ID_ANDROID }} >> .env
+        echo FIREBASE_API_KEY_IOS=${{ secrets.FIREBASE_API_KEY_IOS }} >> .env
+        echo FIREBASE_API_ID_IOS=${{ secrets.FIREBASE_API_ID_IOS }} >> .env
+        cat .env
