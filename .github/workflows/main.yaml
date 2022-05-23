@@ -27,11 +27,16 @@ jobs:
   #     - name: Create .env file
   #       uses: falti/dotenv-action@v0.2.8
   build:
-    runs-on: ubuntu-latest
-    steps:
-      uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-      uses: falti/dotenv-action@v0.2.8
-      with:
-        flutter_channel: stable
-        flutter_version: 3.0.0
+    uses: SpicyPizza/create-envfile@v1.3.0
+    with:
+      envkey_FIREBASE_API_KEY_WEB=${{ secrets.FIREBASE_API_KEY_WEB }}
+      envkey_FIREBASE_APP_ID_WEB=${{ secrets.FIREBASE_APP_ID_WEB }}
+      envkey_FIREBASE_API_KEY_ANDROID=${{ secrets.FIREBASE_API_KEY_ANDROID }}
+      envkey_FIREBASE_API_ID_ANDROID=${{ secrets.FIREBASE_API_ID_ANDROID }}
+      envkey_FIREBASE_API_KEY_IOS=${{ secrets.FIREBASE_API_KEY_IOS }}
+      envkey_FIREBASE_API_ID_IOS=${{ secrets.FIREBASE_API_ID_IOS }}
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      flutter_channel: stable
+      flutter_version: 3.0.0
     
