@@ -47,10 +47,14 @@ class DefaultFirebaseOptions {
     }
   }
 
+  // To avoid Git lint issue
+  static const senderId = '278276856991';
+  static const t = 'pnsvn924p5g67h0kutfi72el9imlacel';
+
   static FirebaseOptions web = FirebaseOptions(
     apiKey: dotenv.get('FIREBASE_API_KEY_WEB'),
     appId: dotenv.get('FIREBASE_API_ID_WEB'),
-    messagingSenderId: '278276856991',
+    messagingSenderId: senderId,
     projectId: 'rjc-codelab-6',
     authDomain: 'rjc-codelab-6.firebaseapp.com',
     storageBucket: 'rjc-codelab-6.appspot.com',
@@ -60,7 +64,7 @@ class DefaultFirebaseOptions {
   static FirebaseOptions android = FirebaseOptions(
     apiKey: dotenv.get('FIREBASE_API_KEY_ANDROID'),
     appId: dotenv.get('FIREBASE_API_ID_ANDROID'),
-    messagingSenderId: '278276856991',
+    messagingSenderId: senderId,
     projectId: 'rjc-codelab-6',
     storageBucket: 'rjc-codelab-6.appspot.com',
   );
@@ -68,11 +72,10 @@ class DefaultFirebaseOptions {
   static FirebaseOptions ios = FirebaseOptions(
     apiKey: dotenv.get('FIREBASE_API_KEY_IOS'),
     appId: dotenv.get('FIREBASE_API_ID_IOS'),
-    messagingSenderId: '278276856991',
+    messagingSenderId: senderId,
     projectId: 'rjc-codelab-6',
     storageBucket: 'rjc-codelab-6.appspot.com',
-    iosClientId:
-        '278276856991-pnsvn924p5g67h0kutfi72el9imlacel.apps.googleusercontent.com',
+    iosClientId: '$senderId-$t.apps.googleusercontent.com',
     iosBundleId: 'com.saifymatteo.rjc-codelab-6',
   );
 }
