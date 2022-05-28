@@ -54,8 +54,12 @@ flutter_*.png
 linked_*.ds
 unlinked.ds
 unlinked_spec.ds
-.fvm/
+.fvm/flutter_sdk
 .env
+/windows
+/web
+/linux
+/macos
 
 # Android related
 **/android/**/gradle-wrapper.jar

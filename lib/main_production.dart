@@ -16,6 +16,7 @@ void main() async {
   // Change package name
   // in android\app\google-services.json
   // remove .dev
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(name: 'rjc-codelab-6',
+    options: DefaultFirebaseOptions.currentPlatform,);
   await bootstrap(() => const App());
 }
